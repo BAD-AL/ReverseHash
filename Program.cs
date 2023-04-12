@@ -65,7 +65,8 @@ namespace ReverseHash
                 }
 
                 //PrintMatches(hash, possibleCharacters, targetStringSize, prefix);
-                HashReverse hr = new HashReverse();
+                //HashReverse hr = new HashReverse();
+                ParallelReverseHash hr = new ParallelReverseHash();
                 hr.PrintMatches(hash, possibleCharacters,
                     prefix.Length + 1, prefix.Length + maxGuessLen, prefix);
             }
@@ -134,7 +135,7 @@ namespace ReverseHash
             }
             DateTime end = DateTime.Now;
             var timeTaken = end - start;
-            Print(string.Format("Finished Searching matches for 0x{0:x}; time: {1}ms ", hash, timeTaken.Milliseconds));
+            Print(string.Format("Finished Searching matches for 0x{0:x}; time: {1}ms ", hash, timeTaken.TotalMilliseconds));
         }
 
         void PrintMatches(uint hash, string possibleCharacters, int targetStringSize, string prefix)

@@ -89,7 +89,8 @@ namespace ReverseHash
 
         private void DoWork()
         {
-            HashReverse hr = new HashReverse();
+            //HashReverse hr = new HashReverse();
+            ParallelReverseHash hr = new ParallelReverseHash();
             hr.AppendObj = this;
             AppendText( string.Format("Running command:\n  ReverseHash 0x{0} -p:{1} -c:{2} -l:{3}\n", 
                 _hashToLookUp, _prefix, _possibleChars, _maxLen));
